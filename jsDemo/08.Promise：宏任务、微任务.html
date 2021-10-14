@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let promise1 = new Promise(resolve => {
+      setTimeout(()=> {
+        resolve();
+        console.log('setTimeout');
+      },0)
+      console.log('Promise里的同步任务');
+    }).then(value => {
+      console.log('微任务then');
+    })
+    console.log('同步任务');
+    //输出顺序： 
+    //Promise里的同步任务 --> 同步任务 --> setTimeout --> 微任务then
+    //原因： 这里的宏任务提升是一种错觉，主要是resolve() 这个微任务的定义，在宏任务里
+  </script>
+</body>
+</html>

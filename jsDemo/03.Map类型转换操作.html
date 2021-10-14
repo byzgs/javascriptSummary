@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let hd = new Map([["中国最好的大学", "北京大学"], ["北京最好的大学", "北京大学"],["新疆最好的大学","石河子大学"]])
+    let newArr = [...hd].filter(item =>  item[1].includes("北京大学"))
+    console.log(newArr);
+    let edu = new Map(newArr)
+    console.log(edu);
+    console.log(...edu.values())
+  </script>
+</body>
+
+</html>
